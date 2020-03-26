@@ -1,0 +1,120 @@
+
+Title:{{title}}
+
+<router-outlet></router-outlet>
+<h1>Employees TableHttp</h1>
+<div *ngIf="noError else noempref">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>FirstName</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+    <tr *ngFor="let i of employees">
+      <td>{{i.id}}</td>
+      <td>{{i.firstName}}</td>
+      <td>{{i.lastName}}</td>
+      <td>{{i.emailId}}</td>
+    </tr>
+  </table>
+</div>
+<ng-template #noempref>
+ <h2>Data not found</h2>
+ <h3>{{errMsg}}</h3>
+</ng-template>
+<hr>
+<h1>users TableHttp</h1>
+<div *ngIf="noError else nousersref">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+    <tr *ngFor="let i of users">
+      <td>{{i.id}}</td>
+      <td>{{i.name}}</td> 
+      <td>{{i.email}}</td>
+    </tr>
+  </table>
+</div>
+<ng-template #nousersref>
+ <h2>Data not found</h2>
+ <h3>{{errMsg}}</h3>
+</ng-template>
+<hr>
+
+<h1>Note usersTableHttp</h1>
+<div *ngIf="noError else nousersrefNote">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>title</th>
+      <th>content</th>
+
+    </tr>
+    <tr *ngFor="let i of usersStudent">
+      <td>{{i.id}}</td>
+      <td>{{i.title}}</td>
+      <td>{{i.content}}</td>
+  
+    </tr>
+  </table>
+</div>
+<ng-template #nousersrefNote>
+ <h2>Data not found</h2>
+ <h3>{{errMsg}}</h3>
+</ng-template>
+<hr>
+<h1>Table1 usersArrayFromService</h1>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>City</th>
+    <th>Salary</th>
+    <th>Dob</th>
+  </tr>
+
+  <tr *ngFor="let i of usersArrayFromService">
+    <td>{{i.id}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.city}}</td>
+    <td>{{i.salary}}</td>
+    <td>{{i.dob | date}}</td>
+  </tr>
+</table>
+<h1>Table2 usersArrayFromComponent</h1>
+<table>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Salary</th>
+      <th>Dob</th>
+    </tr>
+    <tr *ngFor="let i of usersArrayFromComponent">
+      <td>{{i.id}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.city}}</td>
+      <td>{{i.salary}}</td>
+      <td>{{i.dob | date}}</td>
+    </tr>
+  </table>
+</table>
+
+<p>Heroes:</p>
+  <ul>
+    <li *ngFor="let hero of heroes">
+      {{ hero }}
+    </li>
+  </ul>
+
+  <p>Heroes2:</p>
+  <ul>
+    <li *ngFor="let hero of heroes2">
+      {{ hero.name }}
+    </li>
+  </ul>
